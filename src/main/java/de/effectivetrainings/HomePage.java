@@ -24,6 +24,11 @@ public class HomePage extends WebPage {
         add(staticExternalKitten());
         add(dynamicKitten());
         add(superDynamicKitten());
+        add(fallbackDynamicKitten());
+    }
+
+    private Component fallbackDynamicKitten(){
+        return new Image("fallbackDynamicKitten", new FallbackVoodooKittenResource(HomePage.class,"fallbackKitten.jpg","jpg"));
     }
 
     private Component superDynamicKitten(){
